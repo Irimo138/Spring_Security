@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>INDEX</title>
+	</head>
+	<body>
+		<h1>Productos</h1>
+		<form method="POST" action="/anadirproductos">
+			<input type="submit" value="Añadir Productos">
+		</form>
+		<form method="GET" action="/logout">
+			<input type="submit" value="LogOut">
+		</form>
+		<p th:if="${products.empty}">Actualmente no tienes ninguna producto creado.</p>
+		<ul>
+			<li th:each="product : ${products}">
+				<span th:text="${product.name}"></span>
+				<span th:text="${product.price}"></span>
+				<span th:text="${product.currency}"></span>
+			</li>
+		</ul>
+	</body>
+</html>
